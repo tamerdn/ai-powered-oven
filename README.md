@@ -1,88 +1,81 @@
-# ai-powered-oven
-# 🔥 AI-Oven: Yapay Zeka Destekli Akıllı Fırın / AI-Oven: AI-Powered Smart Oven
+# 🔥 AI-Oven: AI-Powered Smart Oven
 
-Bu proje, fırına yerleştirilen yemeğin **görselinden yola çıkarak** pişirme sıcaklığı ve süresini tahmin eden bir yapay zeka sistemini ve onun web arayüzünü içerir.  
->>>
-This project includes an AI system and web interface that predicts the **cooking temperature and duration** from an image of food placed in an oven.
+![GitHub top language](https://img.shields.io/github/languages/top/tamerdn/ai-powered-oven)
+![License](https://img.shields.io/github/license/tamerdn/ai-powered-oven)
 
-## 🚀 Projenin Amacı / Project Goal
-
-Yemeklerin ideal sürede ve sıcaklıkta pişmesini sağlamak için **bilgisayarla görü ve derin öğrenme** kullanılmıştır.
->>>
-To ensure food is cooked at the ideal time and temperature, **computer vision and deep learning** were utilized.
-
----
-# Yapay Zekalı Fırın Asistanı (AI-Powered Oven Assistant) 🤖🔥
-
-
-Mutfaktaki en büyük yardımcınız! Bu proje, pişmemiş bir yemeğin fotoğrafını analiz ederek, o yemek için en uygun pişirme sıcaklığını ve süresini yapay zeka kullanarak öneren bir web uygulamasıdır. Artık "acaba kaç derecede pişirmeliyim?" derdine son!
->>>
-Your greatest assistant in the kitchen! This project is a web application that analyzes a photo of an uncooked meal and suggests the most suitable cooking temperature and time for that meal using artificial intelligence. No more "how many degrees should I cook it at?" worries!
+This project is a web application powered by artificial intelligence that analyzes an image of uncooked food and recommends the optimal cooking temperature and duration. It's designed to take the guesswork out of cooking, ensuring perfectly cooked meals every time.
 
 ---
 
-## 🎯 Projenin Amacı (Purpose Of The Project)
+## 🎯 Purpose of the Project
 
-Bu projenin temel amacı, bilgisayarlı görü ve derin öğrenme tekniklerini kullanarak mutfaktaki pişirme sürecini otomatikleştirmek ve basitleştirmektir. Kullanıcıların yemeklerini her seferinde mükemmel bir şekilde pişirmelerine yardımcı olarak tahmine dayalı pişirmeyi ortadan kaldırmayı hedefler.
->>>
-The main goal of this project is to automate and simplify the cooking process in the kitchen using computer vision and deep learning techniques. It aims to eliminate guesswork in cooking by helping users cook their meals perfectly every time.
+The primary goal of this project is to automate and simplify the cooking process using computer vision and deep learning techniques. It aims to eliminate trial-and-error in the kitchen, helping users to cook their meals perfectly every single time.
 
-## ✨ Özellikler (Features)
+## ✨ Features
 
-* **Görüntü Yükleme:** Kullanıcı dostu web arayüzü üzerinden pişmemiş yemek fotoğrafı yükleme.
-* **Yapay Zeka Destekli Tahmin:** Yüklenen fotoğrafı analiz eden derin öğrenme modeli ile:
-    * Yiyeceğin türünü tanıma (örn: Balık, Pizza, Büftek).
-    * Optimum **pişirme sıcaklığını** (°C) önerme.
-    * Optimum **pişirme süresini** (dakika) önerme.
-* **Sonuç Ekranı:** Analiz sonuçlarını net ve anlaşılır bir şekilde kullanıcıya sunma.
->>>
-* **Image Upload:** Upload uncooked food photos via user-friendly web interface.
-* **Artificial Intelligence Supported Prediction:** Deep learning model analyzes uploaded photo and:
-    * Recognize food type (e.g. Fish, Pizza, Buffet).
-    * Recommend optimum **cooking temperature** (°C).
-    * Recommend optimum **cooking time** (minutes).
-* **Result Screen:** Present analysis results to user in a clear and understandable manner.
+* **Image Upload:** A user-friendly web interface to upload a photo of the uncooked food.
+* **AI-Powered Prediction:** A deep learning model that analyzes the uploaded image to:
+    * Recognize the type of food (e.g., Fish, Pizza, Steak).
+    * Recommend the optimal **cooking temperature** in Celsius (°C).
+    * Recommend the optimal **cooking duration** in minutes.
+* **Results Display:** A clear and intuitive results screen to present the analysis outcome to the user.
 
-## 🛠️ Kullanılan Teknolojiler (Technologies Used)
+## 🛠️ Tech Stack
 
 * **Backend:** Python, Flask
 * **Deep Learning:** TensorFlow, Keras
 * **Image Processing:** OpenCV, Pillow
-* **Model Structure:** CNN + Resnet50 based multiple output regression model
+* **Model Architecture:** CNN + ResNet50 based multiple output regression model
 * **Frontend:** HTML, CSS, JavaScript
 * **Version Control:** Git, GitHub
 
+## 🚀 Installation and Usage
 
-**Eğitilmiş Modeli İndirin: (Download Trained Model:)**
-Eğitilmiş model dosyası (`oven_model.keras`) büyük olduğu için repoya dahil edilmemiştir. Aşağıdaki linkten indirip projenin ana klasörüne kopyalayın.
-> **[Modeli İndir](https://drive.google.com/file/d/1PBA6WnHDFD2hFkNfJOb4B98BT3l2MAPL/view?usp=sharing)**
->>>
-The trained model file (`oven_model.keras`) is not included in the repo because it is large. Download it from the link below and copy it to the main folder of the project.
+To run this project on your local machine, please follow the steps below.
+
+**1. Prerequisites:**
+* Python 3.8+
+* Git
+
+**2. Clone the Repository:**
+```bash
+git clone [https://github.com/tamerdn/ai-powered-oven.git](https://github.com/tamerdn/ai-powered-oven.git)
+cd ai-powered-oven
+```
+**3. Set up a Virtual Environment and Install Dependencies:**
+* Create and activate a virtual environment.
+* Install the required libraries:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+**4. Download the Trained Model:**
+The trained model file (`oven_model.keras`) is not included in the repository due to its large size. You can download it from the link below and place it in the project's root directory.
 > **[Download Model](https://drive.google.com/file/d/1PBA6WnHDFD2hFkNfJOb4B98BT3l2MAPL/view?usp=sharing)**
 
-Uygulama çalışmaya başladığında, terminalde yazan adresi (genellikle `http://127.0.0.1:5000`) tarayıcınıza yapıştırarak projeyi görebilirsiniz.
->>>
-Once the application is running, you can see the project by pasting the address written in the terminal (usually `http://127.0.0.1:5000`) into your browser.
+**5. Run the Application:**
+```bash
+python app.py
+```
+Once the application is running, navigate to the address shown in your terminal (usually `http://127.0.0.1:5000`) in your web browser to see the project in action.
 
-## 📂 Proje Yapısı (Project Structure)
+## 📂 Project Structure
 
 ```
 .
-├── website/                # Web arayüzü dosyaları (HTML, CSS, JS) / Web interface files (HTML, CSS, JS)
+├── website/                # Web interface files (HTML, CSS, JS)
 │   ├── static/
 │   │   ├── css/
 │   │   └── images/
 │   └── templates/
 │       └── index.html
-├── app.py                  # Ana Flask uygulama dosyası / Main Flask application file
-├── oven_model.keras        # Eğitilmiş derin öğrenme modelini indirin / Download the trained deep learning model
-├── requirements.txt        # Gerekli Python kütüphaneleri / Required Python libraries
-├── .gitignore              # Git tarafından görmezden gelinecek dosyalar / Files to be ignored by Git
-└── README.md               # Bu dosya / This file
+├── app.py                  # Main Flask application file
+├── oven_model.keras        # Trained deep learning model (needs to be downloaded)
+├── requirements.txt        # Required Python libraries
+├── .gitignore              # Files to be ignored by Git
+└── README.md               # This file
 ```
 
-## 📜 Lisans (Licence)
+## 📜 License
 
-Bu proje, [MIT Lisansı](LICENSE) ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
->>>
-This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
+This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for more details.
