@@ -1,4 +1,4 @@
-
+# ai-powered-oven
 # 🔥 AI-Oven: Yapay Zeka Destekli Akıllı Fırın / AI-Oven: AI-Powered Smart Oven
 
 Bu proje, fırına yerleştirilen yemeğin **görselinden yola çıkarak** pişirme sıcaklığı ve süresini tahmin eden bir yapay zeka sistemini ve onun web arayüzünü içerir.  
@@ -10,94 +10,81 @@ Yemeklerin ideal sürede ve sıcaklıkta pişmesini sağlamak için **bilgisayar
 To ensure food is cooked at the ideal time and temperature, **computer vision and deep learning** were utilized.
 
 ---
+# Yapay Zekalı Fırın Asistanı (AI-Powered Oven Assistant) 🤖🔥
 
-## 🧠 Yapay Zeka Özellikleri / AI Features
 
-- Derin öğrenme kullanarak **et görüntüsünden**:  
-  - Sıcaklık tahmini (°C)  
-  - Pişme seviyesi tahmini (az pişmiş, orta, iyi pişmiş)
-
-- Using deep learning on **meat images**:  
-  - Temperature prediction (°C)  
-  - Doneness level prediction (rare, medium, well-done)
+Mutfaktaki en büyük yardımcınız! Bu proje, pişmemiş bir yemeğin fotoğrafını analiz ederek, o yemek için en uygun pişirme sıcaklığını ve süresini yapay zeka kullanarak öneren bir web uygulamasıdır. Artık "acaba kaç derecede pişirmeliyim?" derdine son!
+Your greatest assistant in the kitchen! This project is a web application that analyzes a photo of an uncooked meal and suggests the most suitable cooking temperature and time for that meal using artificial intelligence. No more "how many degrees should I cook it at?" worries!
 
 ---
 
-## 🌐 Web Arayüzü / Web Interface
+## 🎯 Projenin Amacı (Purpose Of The Project)
 
-- Görsel yükleme  
-- Yapay zeka tahmin sonuçlarını gösterme  
-- Duyarlı ve kullanıcı dostu arayüz  
+Bu projenin temel amacı, bilgisayarlı görü ve derin öğrenme tekniklerini kullanarak mutfaktaki pişirme sürecini otomatikleştirmek ve basitleştirmektir. Kullanıcıların yemeklerini her seferinde mükemmel bir şekilde pişirmelerine yardımcı olarak tahmine dayalı pişirmeyi ortadan kaldırmayı hedefler.
+The main goal of this project is to automate and simplify the cooking process in the kitchen using computer vision and deep learning techniques. It aims to eliminate guesswork in cooking by helping users cook their meals perfectly every time.
 
-- Image upload  
-- Displaying AI prediction results  
-- Responsive and user-friendly interface
+## ✨ Özellikler (Features)
 
----
+* **Görüntü Yükleme:** Kullanıcı dostu web arayüzü üzerinden pişmemiş yemek fotoğrafı yükleme.
+* **Yapay Zeka Destekli Tahmin:** Yüklenen fotoğrafı analiz eden derin öğrenme modeli ile:
+    * Yiyeceğin türünü tanıma (örn: Balık, Pizza, Büftek).
+    * Optimum **pişirme sıcaklığını** (°C) önerme.
+    * Optimum **pişirme süresini** (dakika) önerme.
+* **Sonuç Ekranı:** Analiz sonuçlarını net ve anlaşılır bir şekilde kullanıcıya sunma.
 
-## 🗂️ Klasör Yapısı / Folder Structure
+* **Image Upload:** Upload uncooked food photos via user-friendly web interface.
+* **Artificial Intelligence Supported Prediction:** Deep learning model analyzes uploaded photo and:
+    * Recognize food type (e.g. Fish, Pizza, Buffet).
+    * Recommend optimum **cooking temperature** (°C).
+    * Recommend optimum **cooking time** (minutes).
+* **Result Screen:** Present analysis results to user in a clear and understandable manner.
+
+## 🛠️ Kullanılan Teknolojiler (Technologies Used)
+
+* **Backend:** Python, Flask 
+* **Derin Öğrenme:** TensorFlow, Keras
+* **Görüntü İşleme:** OpenCV, Pillow
+* **Model Yapısı:** CNN + Resnet50 tabanlı çoklu çıkışlı regresyon modeli
+* **Frontend:** HTML, CSS, JavaScript
+* **Versiyon Kontrol:** Git, GitHub
+
+* **Backend:** Python, Flask
+* **Deep Learning:** TensorFlow, Keras
+* **Image Processing:** OpenCV, Pillow
+* **Model Structure:** CNN + Resnet50 based multiple output regression model
+* **Frontend:** HTML, CSS, JavaScript
+* **Version Control:** Git, GitHub
+
+
+**Eğitilmiş Modeli İndirin: (Download Trained Model:)**
+Eğitilmiş model dosyası (`oven_model.keras`) büyük olduğu için repoya dahil edilmemiştir. Aşağıdaki linkten indirip projenin ana klasörüne kopyalayın.
+> **[Modeli İndir](https://drive.google.com/file/d/1PBA6WnHDFD2hFkNfJOb4B98BT3l2MAPL/view?usp=sharing)**
+
+The trained model file (`oven_model.keras`) is not included in the repo because it is large. Download it from the link below and copy it to the main folder of the project.
+> **[Download Model](https://drive.google.com/file/d/1PBA6WnHDFD2hFkNfJOb4B98BT3l2MAPL/view?usp=sharing)**
+
+Uygulama çalışmaya başladığında, terminalde yazan adresi (genellikle `http://127.0.0.1:5000`) tarayıcınıza yapıştırarak projeyi görebilirsiniz.
+
+Once the application is running, you can see the project by pasting the address written in the terminal (usually `http://127.0.0.1:5000`) into your browser.
+
+## 📂 Proje Yapısı (Project Structure)
 
 ```
-ai-oven/
-│
-├── website/              # Web arayüzü / Web interface
-│   └── index.html, style.css, app.js
-│
-├── ai_model/             # Eğitim ve model dosyaları / Training and model files
-│   ├── train.py
-│   ├── model.py
-│   ├── predict.py
-│   └── model.pt
-│
-├── data/                 # Örnek veriler / Sample data
-│   └── sample_images/, annotations.json
-│
-├── requirements.txt      # Gereken kütüphaneler / Required packages
-├── .gitignore
-└── README.md
+.
+├── website/                # Web arayüzü dosyaları (HTML, CSS, JS) / Web interface files (HTML, CSS, JS)
+│   ├── static/
+│   │   ├── css/
+│   │   └── images/
+│   └── templates/
+│       └── index.html
+├── app.py                  # Ana Flask uygulama dosyası / Main Flask application file
+├── oven_model.keras        # Eğitilmiş derin öğrenme modelini indirin / Download the trained deep learning model
+├── requirements.txt        # Gerekli Python kütüphaneleri / Required Python libraries
+├── .gitignore              # Git tarafından görmezden gelinecek dosyalar / Files to be ignored by Git
+└── README.md               # Bu dosya / This file
 ```
 
----
+## 📜 Lisans (Licence)
 
-## ⚙️ Kurulum / Installation
-
-```bash
-git clone https://github.com/kullaniciadi/ai-oven.git
-cd ai-oven/ai_model
-pip install -r requirements.txt
-```
-
----
-
-## ▶️ Kullanım / Usage
-
-1. `predict.py` dosyasını çalıştırarak modeli kullanabilirsiniz.  
-2. `website/index.html` dosyasını tarayıcıda açarak görsel yükleyebilirsiniz.
-
-1. Run `predict.py` to use the model.  
-2. Open `website/index.html` in your browser to upload an image.
-
----
-
-## 🧪 Model Performansı / Model Performance
-
-- Eğitim Doğruluğu / Training Accuracy: %XX  
-- Test Hatası / Test Error: XX MSE  
-- Kullanılan metrikler / Used metrics: MSE, Accuracy
-
----
-
-## 📁 Veri Seti / Dataset
-
-Veri seti telif nedeniyle paylaşılmamaktadır. Ancak örnek görseller `data/` klasöründe mevcuttur.  
-The dataset is not shared due to copyright. However, sample images are available in the `data/` folder.
-
----
-
-## 📌 Notlar / Notes
-
-- Bu proje **TÜBİTAK 2209-A** başvurusu için hazırlanmıştır.  
-- Eğitim amaçlıdır. Gerçek cihazlarda kullanmadan önce test edilmelidir.
-
-- This project was prepared for the **TÜBİTAK 2209-A** research grant.  
-- It is for educational purposes. Must be tested before using in real ovens.
+Bu proje, [MIT Lisansı](LICENSE) ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
+This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
