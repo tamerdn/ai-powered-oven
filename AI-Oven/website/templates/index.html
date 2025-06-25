@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AI-Fırın | Yapay Zeka Destekli Fırın</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
+		<style>
+			.loading {
+				display: none;
+				text-align: center;
+				margin: 20px 0;
+			}
+			.loading img {
+				width: 50px;
+				height: 50px;
+			}
+			.error-message {
+				color: #ff0000;
+				display: none;
+				margin: 10px 0;
+				padding: 10px;
+				background-color: #ffe6e6;
+				border-radius: 5px;
+			}
+			#resultImage {
+				max-width: 100%;
+				height: auto;
+				margin: 20px 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="{{ url_for('home') }}">Yapay Zeka Destekli Fırın</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+							<li><a href="#one" class="scrolly">Hakkında</a></li>
+							<li><a href="#two" class="scrolly">Özellikler</a></li>
+							<li><a href="#three" class="scrolly">Nasıl Çalışır?</a></li>
+							<li><a href="#four" class="scrolly">Fırını Kullan</a></li>
+							<li><a href="#five" class="scrolly">İletişim</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Yapay Zeka Destekli Fırın</h2>
+							<p>En uygun sıcaklık ve süreyi tahmin eden akıllı fırın!</p>
+						</header>
+						<span class="image"><img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="Modern Akıllı Fırın" /></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">İleri</a>
+				</section>
+
+			<!-- One -->
+				<section id="one" class="spotlight style1 bottom">
+					<span class="image fit main"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></span>
+					<div class="content">
+						<div class="container">
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<header>
+										<h2>Hakkında</h2>
+										
+									</header>
+								</div>
+								<div class="col-4 col-12-medium">
+									<p>AI-Fırın, derin öğrenme teknikleri kullanarak bir yemeğin pişmeden önceki görüntüsünü analiz eder
+										ve bu görüntüden ideal pişirme süresi ve sıcaklık tahmininde bulunur. 
+										Bu sayede kullanıcılar yiyeceklerini tam kıvamında pişirebilirler.</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<a href="#two" class="goto-next scrolly">İleri</a>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Özellikler</h2>
+							<p>2000 Veriden oluşan veri seti ile 5 tane yemek türüne sahiptir.</p>
+						</header>
+						<p>Pizza, Balık, Biftek, Ekmek ve Kurabiye için az, orta ve çok pişmiş olmak üzere yemeğin pişmesi için optimum sıcaklık derecesi ve pişme süresi önerileri yapar. </p>
+					</div>
+					<a href="#three" class="goto-next scrolly">İleri</a>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="{{ url_for('static', filename='images/pic04.jpg') }}" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Nasıl Çalışır?</h2>
+							<p>Yemeğin pişmemiş halinin fotoğrafı yüklenir.</p>
+						</header>
+						<p>Daha sonra, Model görseli analiz eder ve Pişme derecesi (az , orta ve çok pişmiş) için önerilen süreler ve sıcaklıklar kullanıcıya sunulur.</p>
+					</div>
+					<a href="#four" class="goto-next scrolly">İleri</a>
+				</section>
+				
+			<!-- Four -->
+			<section id="four" class="wrapper style1 fade-up" style="padding-bottom: 8em;">
+				<div class="container">
+					<header class="major">
+						<h2>Fırını Kullan</h2>
+						<p>Yemeğinizin fotoğrafını yükleyin, biz size ideal pişirme sıcaklıklarını ve sürelerini söyleyelim!</p>
+						<p>Lütfen özellikler kısmında bulunan yemek türlerinden, pişmemiş hâlde olan bir fotoğraf yükleyiniz.</p>
+					</header>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="box" style="text-align: center;">
+								<!-- Fotoğraf Yükleme Alanı -->
+								<div id="uploadArea" style="margin-bottom: 20px;">
+									<input type="file" id="imageUpload" name="imageUpload" accept="image/*" style="display: none;">
+									<button type="button" class="button primary" onclick="document.getElementById('imageUpload').click();">
+										Fotoğraf Seç
+									</button>
+									<p id="selectedFileName" style="margin-top: 10px;"></p>
+								</div>
+
+								<!-- Tahmin Butonu -->
+								<button type="button" id="predictButton" class="button primary" style="display: none;">
+									Tahmin Yap
+								</button>
+
+								<!-- Yükleniyor Göstergesi -->
+								<div id="loadingIndicator" style="display: none; margin: 20px 0;">
+									<img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Yükleniyor..." style="width: 50px; height: 50px;">
+									<p>Tahmin yapılıyor, lütfen bekleyin...</p>
+								</div>
+
+								<!-- Hata Mesajı -->
+								<div id="errorMessage" class="error-message" style="display: none;"></div>
+
+								<!-- Yüklenen Görüntü -->
+								<img id="resultImage" src="" alt="Yüklenen Görüntü" style="max-width: 100%; margin: 20px 0; display: none;">
+
+								<!-- Sonuçlar -->
+								<div id="results" style="display: none; margin-top: 20px;">
+									<h3>Pişirme Önerileri</h3>
+									<div class="row">
+										<div class="col-4">
+											<h4>Az Pişmiş</h4>
+											<p id="az_sicaklik">Sıcaklık: -</p>
+											<p id="az_sure">Süre: -</p>
+										</div>
+										<div class="col-4">
+											<h4>Orta Pişmiş</h4>
+											<p id="orta_sicaklik">Sıcaklık: -</p>
+											<p id="orta_sure">Süre: -</p>
+										</div>
+										<div class="col-4">
+											<h4>Çok Pişmiş</h4>
+											<p id="cok_sicaklik">Sıcaklık: -</p>
+											<p id="cok_sure">Süre: -</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#five" class="goto-next scrolly">İleri</a>
+			</section>
+			  
+
+			<!-- Five -->
+				<section id="five" class="wrapper style2 special fade">
+					<div class="container">
+						<header>
+							<h2>İletişim</h2>
+						</header>
+						<form method="post" action="#" class="cta">
+							<div class="row gtr-uniform gtr-50">
+							  <div class="col-8 col-12-xsmall">
+								<input type="text" name="name" id="name" placeholder="Adınız" required />
+							  </div>
+							  <div class="col-8 col-12-xsmall">
+								<input type="email" name="email" id="email" placeholder="Email Adresiniz" required />
+							  </div>
+							  <div class="col-8 col-12-xsmall">
+								<textarea name="message" id="message" placeholder="Mesajınız" rows="4" required></textarea>
+							  </div>
+							  <div class="col-4 col-12-xsmall">
+								<input type="submit" value="Gönder" class="fit primary" />
+							  </div>
+							</div>
+						  </form>
+						  
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/tamer-erdo%C4%9Fan-515ab4246/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/tamerdn/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://github.com/tamerdn" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; AI-Fırın 2025 Tüm hakları saklıdır.</li><li>Tasarım: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.dropotron.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+			<script>
+				// Seçilen dosyayı saklamak için değişken
+				let selectedFile = null;
+
+				// Dosya seçildiğinde
+				document.getElementById('imageUpload').addEventListener('change', function(e) {
+					const file = e.target.files[0];
+					if (file) {
+						// Dosya boyutu kontrolü (16MB)
+						if (file.size > 16 * 1024 * 1024) {
+							showError('Dosya boyutu 16MB\'dan büyük olamaz');
+							return;
+						}
+
+						// Dosya tipi kontrolü
+						const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+						if (!allowedTypes.includes(file.type)) {
+							showError('Lütfen sadece JPG, JPEG veya PNG formatında dosya yükleyin');
+							return;
+						}
+
+						// Dosyayı kaydet ve arayüzü güncelle
+						selectedFile = file;
+						document.getElementById('selectedFileName').textContent = `Seçilen dosya: ${file.name}`;
+						document.getElementById('predictButton').style.display = 'inline-block';
+						hideError();
+					}
+				});
+
+				// Tahmin butonuna tıklandığında
+				document.getElementById('predictButton').addEventListener('click', function() {
+					if (!selectedFile) {
+						showError('Lütfen önce bir fotoğraf seçin');
+						return;
+					}
+
+					// Arayüzü hazırla
+					showLoading();
+					hideError();
+					hideResults();
+
+					// FormData oluştur
+					const formData = new FormData();
+					formData.append('imageUpload', selectedFile);
+
+					// Sunucuya gönder
+					fetch('/tahmin', {
+						method: 'POST',
+						body: formData
+					})
+					.then(response => {
+						if (!response.ok) {
+							throw new Error(`Sunucu hatası: ${response.status}`);
+						}
+						return response.json();
+					})
+					.then(data => {
+						hideLoading();
+						
+						if (data.error) {
+							showError(data.error);
+							return;
+						}
+
+						// Sonuçları göster
+						showResults(data);
+					})
+					.catch(error => {
+						console.error('Hata:', error);
+						hideLoading();
+						showError('Sunucu ile iletişim kurulurken bir hata oluştu. Lütfen tekrar deneyin.');
+					});
+				});
+
+				// Yardımcı fonksiyonlar
+				function showError(message) {
+					const errorDiv = document.getElementById('errorMessage');
+					errorDiv.textContent = message;
+					errorDiv.style.display = 'block';
+				}
+
+				function hideError() {
+					document.getElementById('errorMessage').style.display = 'none';
+				}
+
+				function showLoading() {
+					document.getElementById('loadingIndicator').style.display = 'block';
+					document.getElementById('predictButton').disabled = true;
+				}
+
+				function hideLoading() {
+					document.getElementById('loadingIndicator').style.display = 'none';
+					document.getElementById('predictButton').disabled = false;
+				}
+
+				function hideResults() {
+					document.getElementById('results').style.display = 'none';
+					document.getElementById('resultImage').style.display = 'none';
+				}
+
+				function showResults(data) {
+					// Görüntüyü göster
+					const resultImage = document.getElementById('resultImage');
+					resultImage.src = data.image_url;
+					resultImage.style.display = 'block';
+
+					// Sonuçları göster
+					document.getElementById('az_sicaklik').textContent = `Sıcaklık: ${data.az_pismis.sicaklik}°C`;
+					document.getElementById('az_sure').textContent = `Süre: ${data.az_pismis.sure} dk`;
+					document.getElementById('orta_sicaklik').textContent = `Sıcaklık: ${data.orta_pismis.sicaklik}°C`;
+					document.getElementById('orta_sure').textContent = `Süre: ${data.orta_pismis.sure} dk`;
+					document.getElementById('cok_sicaklik').textContent = `Sıcaklık: ${data.cok_pismis.sicaklik}°C`;
+					document.getElementById('cok_sure').textContent = `Süre: ${data.cok_pismis.sure} dk`;
+
+					// Sonuçlar bölümünü göster
+					document.getElementById('results').style.display = 'block';
+				}
+			</script>
+
+	</body>
+</html>

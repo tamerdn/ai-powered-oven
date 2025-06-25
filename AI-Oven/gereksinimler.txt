@@ -1,0 +1,2 @@
+Gerekli Kütüphaneler(Requirement Libaries
+numpy, os, tenserflow, sklearn, json, tkinter, PIL, flask, werkzeug, time
